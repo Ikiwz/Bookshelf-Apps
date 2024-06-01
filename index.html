@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Icons -->
+    <link
+      rel="shortcut icon"
+      href="assets/image/rs-icon.png"
+      type="image/x-icon"
+    />
+
+    <title>Bookshelf Apps</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="assets/img/bookshelf.png" alt="" />
+          <h2>Bookshelf Apps</h2>
+        </div>
+        <div class="navigation">
+          <div class="book-filters">
+            <button id="showAddBook">
+              <img class="icon" src="assets/img/add.png" alt="" />
+              <p>Add Books</p>
+            </button>
+            <button class="main-book active-book" onclick="mainBook('all')">
+              <img class="icon" src="assets/img/all.png" alt="" />
+              <p>All Books</p>
+              <span id="countAllBook">0</span>
+            </button>
+            <button class="main-book" onclick="mainBook('incompleteApp')">
+              <img class="icon" src="assets/img/unfinished-book.png" alt="" />
+              <p>Not Finished</p>
+              <span id="countNotFinished">0</span>
+            </button>
+            <button class="main-book" onclick="mainBook('completeApp')">
+              <img class="icon" src="assets/img/finished-book.png" alt="" />
+              <p>Finished Reading</p>
+              <span id="countFinished">0</span>
+            </button>
+
+            <div class="search">
+              <label for="searchBookTitle">
+                <img class="icon" src="assets/img/search.png" alt="" />
+              </label>
+              <input
+                id="searchBookTitle"
+                type="text"
+                placeholder="Search book title..."
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="content">
+      <section id="sectionMain" class="section-main">
+        <div class="section-data">
+          <h2>Add Books</h2>
+          <button id="hideAddBook">
+            <img class="icon" src="assets/img/hide.png" alt="" />
+          </button>
+        </div>
+        <form id="book-input">
+          <div class="input-items col">
+            <label for="input-bookTitle">Book Title</label>
+            <input
+              id="input-bookTitle"
+              type="text"
+              placeholder="Fill Book Title"
+              required
+            />
+          </div>
+          <div class="input-items col">
+            <label for="input-bookAuthor">Author</label>
+            <input
+              id="input-bookAuthor"
+              type="text"
+              placeholder="Fill Book Author"
+              required
+            />
+          </div>
+          <div class="input-items row">
+            <div class="input-items row">
+              <label for="input-yearBook">Publication Year</label>
+              <input
+                id="input-yearBook"
+                type="number"
+                placeholder="Fill Year"
+                required
+              />
+            </div>
+            <div class="input-items row">
+              <label for="input-bookIsComplete">Finished Reading</label>
+              <input id="input-bookIsComplete" type="checkbox" />
+            </div>
+          </div>
+          <button type="submit">Add Books</button>
+        </form>
+      </section>
+      <section class="app-section">
+        <div class="app-list">
+          <div id="incompleteApp" class="app-items">
+            <h3 class="bookshelf">Bookshelf Unfinished Reading</h3>
+            <div id="incompleteBookList" class="book-list"></div>
+          </div>
+          <div id="completeApp" class="app-items">
+            <h3 class="bookshelf">Bookshelf Finished Reading</h3>
+            <div id="completeBookList" class="book-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="socials">
+        <a href="#"
+          ><img class="icon" src="assets/img/instagram.png" alt="instagram"
+        /></a>
+        <a href="#"
+          ><img class="icon" src="assets/img/facebook.png" alt="facebook"
+        /></a>
+        <a href="#"
+          ><img class="icon" src="assets/img/twitter.png" alt="twitter"
+        /></a>
+      </div>
+
+      <div class="credit">
+        <p>Created by <a href="">rifkiandriyana</a>. | &copy; 2024.</p>
+      </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
